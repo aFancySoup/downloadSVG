@@ -1,4 +1,4 @@
-export function downloadSVGImage(svgElementId, name, format) {
+exports.downloadSVGImage = function downloadSVGImage(svgElementId, name, format) {
     if (!svgElementId || !name) {
         return;
     }
