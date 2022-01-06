@@ -7,16 +7,18 @@ exports.downloadSVGImage = function downloadSVGImage(svgElementId, name, format)
         format = "svg";
     }
 
-    const viewBox = svgElementId.getAttribute("viewBox");
+    const svgElement = document.getElementById(svgElementId);
+    
+    const viewBox = svgElement.getAttribute("viewBox");
     const dimensionArr = viewBox.splite(" ");
     const width = parseInt(dimensionArr[2]);
     const height = parseInt(dimensionArr[3]);
 
     // If you don"t set the width and height of the svgElement... it won"t work in Firefox. Go figure
-    svgElementId.setAttribute("width",svgElementId.clientWidth.toString());
-    svgElementId.setAttribute("height", svgElementId.clientHeight.toString());
+    svgElement.setAttribute("width",svgElement.clientWidth.toString());
+    svgElement.setAttribute("height", svgElement.clientHeight.toString());
 
-    const xml = new XMLSerializer().serializeToString(svgElementId);
+    const xml = new XMLSerializer().serializeToString(svgElement);
     const svgBit64 = window.btoa(xml);
     const b64Start = "data:image/svg+xml;base64,"
 
