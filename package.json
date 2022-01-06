@@ -1,0 +1,11 @@
+{
+  "name": "downloadsvg",
+  "version": "1.0.0",
+  "description": "A function that allows you to download an SVG and convert to either a PNG or JPEG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aFancySoup",
+  "license": "MIT"
+}
